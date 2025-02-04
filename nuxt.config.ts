@@ -3,19 +3,19 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   modules: [
-    '@nuxt/ui',
-    'nuxt-firebase-emulators',
-    'nuxt-vuefire',
-    '@nuxt/eslint'
+    "@nuxt/ui",
+    "nuxt-firebase-emulators",
+    "nuxt-vuefire",
+    "@nuxt/eslint",
   ],
 
-  css: ['~/assets/css/main.css'],
+  css: ["~/assets/css/main.css"],
 
   future: {
-    compatibilityVersion: 4
+    compatibilityVersion: 4,
   },
 
-  compatibilityDate: '2024-11-27',
+  compatibilityDate: "2024-11-27",
 
   vuefire: {
     config: {
@@ -30,4 +30,4 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
-})
+});
