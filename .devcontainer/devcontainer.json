@@ -2,9 +2,16 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
     "name": "Nuxt Ui 3 + Firebase App",
-    "image": "fechdev/devcontainer-typescript-node-firebase:1-22-bookworm",
+    "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+    "features": {
+      "ghcr.io/devcontainers/features/java:1": {},
+      "ghcr.io/devcontainers-extra/features/pnpm": {
+        "version": "latest"
+      }
+    },
     "mounts": ["source=pnpm-store,target=/home/node/.pnpm-store,type=volume"],
-    "postCreateCommand": "pnpm config set store-dir /home/node/.pnpm-store && sudo chown -R node:node /home/node/.pnpm-store",
+    "initializeCommand": "./.devcontainer/commands/initialize.sh",
+    "postCreateCommand": "./.devcontainer/commands/post-create.sh",
     "customizations": {
       "vscode": {
         "extensions": [
@@ -13,10 +20,9 @@
           "Vue.volar",
           "vitest.explorer",
           "antfu.iconify",
-          "bradlc.vscode-tailwindcss",
-          "SamaTech.postcss-vue",
-          "praburangki.nuxt-snippets",
           "geekabe.iconify-search",
+          "bradlc.vscode-tailwindcss",
+          "praburangki.nuxt-snippets",
           "eamodio.gitlens",
           "pflannery.vscode-versionlens",
           "vivaxy.vscode-conventional-commits",
